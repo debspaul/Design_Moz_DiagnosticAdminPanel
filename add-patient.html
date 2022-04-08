@@ -16,33 +16,94 @@
 
 	<title>Add Patient | Moz PathLab</title>
 
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<!-- bootstrap toggle -->
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+	
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 
 <body>
 	<div class="wrapper">
+
+
+
+
+		<!-------------------------------------------------- SIDEBAR -->
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
-			<a class="sidebar-brand" href="index.html">
-          		<span class="align-middle"><img src="img/logo_light.png" alt="" class="w-100"></span>
-        	</a>
+				<a class="sidebar-brand" href="index.html">
+					<span class="align-middle"><img src="img/logo_light.png" alt="" class="w-100"></span>
+				</a>
 
 				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						General
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="dashboard.html">
+							<i class="align-middle" data-feather="list"></i> <span class="align-middle">Dashboard</span>
+						</a>
+					</li>
+
+
+
+
 					<li class="sidebar-header">
 						Patient Management
 					</li>
 
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="list"></i> <span class="align-middle">All Patients</span>
+						</a>
+					</li>
 					<li class="sidebar-item active">
 						<a class="sidebar-link" href="add-patient.html">
-							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Add Patient</span>
+							<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Add New Patient</span>
+						</a>
+					</li>
+
+
+
+
+					<li class="sidebar-header">
+						Medicines
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="list"></i> <span class="align-middle">All Medicines</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Add New Medicine</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Categories</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Stock</span>
 						</a>
 					</li>
 				</ul>
 
 				<!-- <div class="sidebar-cta">
 					<div class="sidebar-cta-content">
-						<strong class="d-inline-block my-4">Upgrade to Pro</strong>
+						<strong class="d-inline-block mb-4">Upgrade to Pro</strong>
 						<div class="mb-3 text-sm">
 							Are you looking for more components? Check out our premium version.
 						</div>
@@ -53,8 +114,17 @@
 				</div> -->
 			</div>
 		</nav>
+		<!-------------------------------------------------- /SIDEBAR -->
+
+
+
+
+
+
+
 
 		<div class="main">
+			<!---------------------------------------------------- HEADER -->
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
 					<i class="hamburger align-self-center"></i>
@@ -215,6 +285,9 @@
 					</ul>
 				</div>
 			</nav>
+			<!---------------------------------------------------- /HEADER -->
+
+
 
 			<main class="content">
 				<div class="container-fluid p-0">
@@ -232,59 +305,163 @@
 										</div>
 										<div class="card-body">
 
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Title</label>
-												<div class="col-md-10">
-													<select name="" id="" class="form-control">
+
+
+											<div class="row mb-3">
+												<div class="col-md-2">
+													<div class="form-group">
+														<label class="form-label mb-0"><b>Title</b></label>
+														<select name="" id="" class="form-control form-control-sm">
+															<option value="">-- Select --</option>
+															<option value="">Mr.</option>
+															<option value="">Ms.</option>
+															<option value="">Mrs.</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="form-label mb-0"><b>Patient's Name</b></label>
+														<input type="text" class="form-control form-control-sm">
+													</div>
+												</div>
+
+												<div class="col-md-2">
+													<div class="form-group">
+														<label class="form-label mb-0"><b>Gender</b></label>
+														<div class="mt-1">
+															<label class="form-inline-check small me-2">
+																<input class="form-check-input" type="radio" value="yes" name="gender" checked>
+																<span class="form-check-label">Male</span>
+															</label>
+															<label class="form-inline-check small me-2">
+																<input class="form-check-input" type="radio" value="no" name="gender">
+																<span class="form-check-label">Female</span>
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+
+
+
+
+
+											<div class="row mb-3">
+												<div class="col-md">
+													<div class="form-group">
+														<label class="form-label mb-0"><b>Patient's Date of Birth</b></label>
+														<input type="date" class="form-control form-control-sm" id="patientDob">
+													</div>
+												</div>
+
+												<div class="col-md">
+													<div class="form-group">
+														<label class="form-label mb-0"><b>Patient's Age</b></label>
+														<input type="text" class="form-control form-control-sm" id="patientAge" disabled>
+													</div>
+												</div>
+
+
+												<div class="col-md">
+													<label class="form-label mb-0"><b>Patient's Height</b></label>
+													<input type="text" class="form-control form-control-sm">
+												</div>
+
+
+												
+												<div class="col-md">
+													<label class="form-label mb-0"><b>Patient's Weight</b></label>
+													<input type="text" class="form-control form-control-sm">
+												</div>
+
+
+
+												<div class="col-md">
+													<label class="form-label mb-0"><b>Blood Group</b></label>
+													<select name="" id="" class="form-control form-control-sm">
 														<option value="">-- Select --</option>
-														<option value="">Mr.</option>
-														<option value="">Ms.</option>
-														<option value="">Mrs.</option>
+														<option value="">A-</option>
+														<option value="">A+</option>
+														<option value="">B-</option>
+														<option value="">B+</option>
+														<option value="">AB-</option>
+														<option value="">AB+</option>
+														<option value="">O-</option>
+														<option value="">O+</option>
 													</select>
 												</div>
+
+
 											</div>
 
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Patient's Name</label>
-												<div class="col-md-10">
-													<input type="text" class="form-control">
-												</div>
-											</div>
 
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Patient's Date of Birth</label>
-												<div class="col-md-10">
-													<input type="text" class="form-control">
+
+
+
+											<div class="row">
+												<!-- contact numbers -->
+												<div class="col-md-6">
+													<div class="form-inner-wrapper contactNumbers" id="newContactField">
+														<div class="form-inner-title">
+															<span>Contact Number</span>
+															<div class="buttons">
+																<a href="javascript:void(0);" class="btn btn-success btn-sm" id="addContact"><i class="fas fa-plus"></i> Add</a>
+																<a href="javascript:void(0);" class="btn btn-danger btn-sm" id="removeContact"><i class="fas fa-times"></i> Remove</a>
+															</div>
+														</div>
+
+														<div class="contact-field-wrap field-list align-items-center my-2" data-id="1">
+															<span class="numbering me-2">1.</span>
+
+															<div class="input-group">
+																<input type="text" class="form-control form-control-sm" name="contact-number1" id="contact-number1">
+																<!-- <a href="#" class="btn btn-danger btn-sm delete"><i class="fas fa-times"></i></a> -->
+															</div>
+
+															<label class="form-inline-check me-2">
+																<input class="form-check-input" type="radio" value="yes" id="contact-primary1" name="contact-primary" checked>
+																<span class="form-check-label small">Primary</span>
+															</label>
+														</div>
+
+													</div>
 												</div>
+												<!-- /contact numbers -->
+
+
+
+												<!-- email address -->
+												<div class="col-md-6">
+													<div class="form-inner-wrapper emailAddress" id="newEmailField">
+														<div class="form-inner-title">
+															<span>Email Address</span>
+															<div class="buttons">
+																<a href="javascript:void(0);" class="btn btn-success btn-sm" id="addEmail"><i class="fas fa-plus"></i> Add</a>
+																<a href="javascript:void(0);" class="btn btn-danger btn-sm" id="removeEmail"><i class="fas fa-times"></i> Remove</a>
+															</div>
+														</div>
+
+														<div class="email-field-wrap field-list align-items-center my-2" data-id="1">
+															<span class="numbering me-2">1.</span>
+
+															<div class="input-group">
+																<input type="text" class="form-control form-control-sm" name="email-address1" id="email-address1">
+																<!-- <a href="#" class="btn btn-danger btn-sm delete"><i class="fas fa-times"></i></a> -->
+															</div>
+
+															<label class="form-inline-check me-2">
+																<input class="form-check-input" type="radio" value="yes" id="email-primary1" name="email-primary" checked>
+																<span class="form-check-label small">Primary</span>
+															</label>
+														</div>
+
+													</div>
+												</div>
+												<!-- /email address -->
 											</div>
 											
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Patient's Age</label>
-												<div class="col-md-10">
-													<input type="text" class="form-control" disabled>
-												</div>
-											</div>
-
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Patient's Height</label>
-												<div class="col-md-10">
-													<input type="text" class="form-control">
-												</div>
-											</div>
-
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Patient's Weight</label>
-												<div class="col-md-10">
-													<input type="text" class="form-control">
-												</div>
-											</div>
-
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Blood Group</label>
-												<div class="col-md-10">
-													<input type="text" class="form-control">
-												</div>
-											</div>
 										</div>
 									</div>
 								<!----------------------------------------- /PERSONAL DETAILS -->
@@ -301,11 +478,9 @@
 										</div>
 										<div class="card-body">
 											
-											<div class="form-group row align-items-center">
-												<label class="form-label col-md-2 text-end mb-0">Permanent Address</label>
-												<div class="col-md-10">
-													<textarea name="" id="" rows="5" class="form-control"></textarea>
-												</div>
+											<div class="form-group">
+												<label class="form-label mb-0"><b>Permanent Address</b></label>
+												<textarea name="" id="" rows="5" class="form-control form-control-sm"></textarea>
 											</div>
 											
 										</div>
@@ -324,101 +499,117 @@
 										</div>
 										<div class="card-body">
 
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Have any allergies?</label>
-												<div class="col-md-10">
-													<label class="form-inline-check me-2">
-														<input class="form-check-input" type="radio" value="yes" name="radios-example" checked>
-														<span class="form-check-label">Yes</span>
-													</label>
-													<label class="form-inline-check me-2">
-														<input class="form-check-input" type="radio" value="no" name="radios-example">
-														<span class="form-check-label">No</span>
-													</label>
-												</div>
-											</div>
 
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Brief details of allergy</label>
-												<div class="col-md-10">
-													<textarea name="" id="" rows="3" class="form-control"></textarea>
-												</div>
-											</div>
-
-
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Previous records?</label>
-												<div class="col-md-10">
-													<label class="form-inline-check me-2">
-														<input class="form-check-input" type="radio" value="yes" name="radios-example">
-														<span class="form-check-label">Yes</span>
-													</label>
-													<label class="form-inline-check me-2">
-														<input class="form-check-input" type="radio" value="no" name="radios-example" checked>
-														<span class="form-check-label">No</span>
-													</label>
-												</div>
-											</div>
-
-
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Taking Any Medicine?</label>
-												<div class="col-md-10">
-													<label class="form-inline-check me-2">
-														<input class="form-check-input" type="radio" value="yes" name="radios-example" checked>
-														<span class="form-check-label">Yes</span>
-													</label>
-													<label class="form-inline-check me-2">
-														<input class="form-check-input" type="radio" value="no" name="radios-example">
-														<span class="form-check-label">No</span>
-													</label>
-												</div>
-											</div>
-
-
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Add Medicine Details</label>
-												<div class="col-md-10">
-													
-													<div class="input-group align-items-center my-2">
-														<span class="me-2">1.</span>
-														<input type="text" class="form-control form-control-sm">
-														<a href="#" class="btn btn-danger btn-sm">X</a>
+											<div class="row align-items-center mb-4">
+												<div class="col-md-4">
+													<div class="form-group row align-items-center mb-4">
+														<label class="form-label col-md-7 mb-0"><b>Have any allergies?</b></label>
+														<div class="col-md-5">
+															<input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" name="have-allergy" id="have-allergy">
+														</div>
 													</div>
-													<div class="input-group align-items-center my-2">
-														<span class="me-2">2.</span>
-														<input type="text" class="form-control form-control-sm">
-														<a href="#" class="btn btn-danger btn-sm">X</a>
-													</div>
-													
-													<div class="buttons text-end">
-														<a href="#" class="btn btn-success btn-sm">+ Add More</a>
+												</div>
+
+
+												<div class="col-md-8 d-none" id="allergy-details">
+													<div class="form-group mb-4">
+														<label class="form-label mb-0"><b>Brief details of allergy</b></label>
+														<textarea name="" id="" rows="3" class="form-control form-control-sm"></textarea>
 													</div>
 												</div>
 											</div>
+
 											
 
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Consulted anyone before?</label>
-												<div class="col-md-10">
-													<label class="form-inline-check me-2">
-														<input class="form-check-input" type="radio" value="yes" name="radios-example">
-														<span class="form-check-label">Yes</span>
-													</label>
-													<label class="form-inline-check me-2">
-														<input class="form-check-input" type="radio" value="no" name="radios-example" checked>
-														<span class="form-check-label">No</span>
-													</label>
+
+
+											<div class="row align-items-center mb-4">
+												<div class="col-md-4">
+													<div class="form-group row align-items-center mb-4">
+														<label class="form-label col-md-7 mb-0"><b>Previous records?</b></label>
+														<div class="col-md-5">
+															<input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" name="previous-records">
+														</div>
+													</div>
 												</div>
 											</div>
 
 
-											<div class="form-group row align-items-center my-4">
-												<label class="form-label col-md-2 text-end mb-0">Consulted Doctor's Name</label>
-												<div class="col-md-10">
-													<input type="text" class="form-control">
+
+
+
+											<div class="row align-items-center mb-4">
+												<div class="col-md-4">
+													<div class="form-group row align-items-center mb-4">
+														<label class="form-label col-md-7 mb-0"><b>Taking Any Medicine?</b></label>
+														<div class="col-md-5">
+															<input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" name="taking-medicine" id="taking-medicine">
+														</div>
+													</div>
+												</div>
+
+
+												<div class="col-md-8 d-none" id="medicine-details">
+													<div class="form-inner-wrapper medicines mt-0 mb-4" id="newMedicineField">
+														<div class="form-inner-title">
+															<span>Add Medicine Details</span>
+															<div class="buttons">
+																<a href="javascript:void(0);" class="btn btn-success btn-sm" id="addMedicine"><i class="fas fa-plus"></i> Add</a>
+																<a href="javascript:void(0);" class="btn btn-danger btn-sm" id="removeMedicine"><i class="fas fa-times"></i> Remove</a>
+															</div>
+														</div>
+		
+														<div class="medicine-field-wrap my-2" data-id="1">
+															<div class="field-list align-items-center">
+																<span class="numbering me-2">1.</span>
+																<div class="field1"><input type="text" class="form-control form-control-sm" name="medicine-name1" id="medicine-name1" placeholder="Medicine Name"></div>
+																<div class="field2"><input type="text" class="form-control form-control-sm" name="medicine-desc1" id="medicine-desc1" placeholder="Medicine Description (e.g. why it was prescribed, doses etc)"></div>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
+
+											
+
+
+											
+											
+
+
+
+											<div class="row align-items-center mb-4">
+												<div class="col-md-4">
+													<div class="form-group row align-items-center mb-4">
+														<label class="form-label col-md-7 mb-0"><b>Consulted anyone before?</b></label>
+														<div class="col-md-5">
+															<input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" name="consulted-anyone" id="consulted-anyone">
+														</div>
+													</div>
+												</div>
+
+
+												<div class="col-md-8 d-none" id="doctor-details">
+													<div class="form-inner-wrapper consultedDoctors mt-0 mb-4" id="newDoctorField">
+														<div class="form-inner-title">
+															<span>Consulted Doctors Details</span>
+															<div class="buttons">
+																<a href="javascript:void(0);" class="btn btn-success btn-sm" id="addDoctor"><i class="fas fa-plus"></i> Add</a>
+																<a href="javascript:void(0);" class="btn btn-danger btn-sm" id="removeDoctor"><i class="fas fa-times"></i> Remove</a>
+															</div>
+														</div>
+		
+														<div class="doctor-field-wrap my-2" data-id="1">
+															<div class="field-list align-items-center">
+																<span class="numbering me-2">1.</span>
+																<div class="field1"><input type="text" class="form-control form-control-sm" name="doctor-name1" id="doctor-name1" placeholder="Doctor's Name"></div>
+																<div class="field2"><input type="text" class="form-control form-control-sm" name="doctor-special1" id="doctor-special1" placeholder="Specialization"></div>
+															</div>
+														</div>		
+													</div>
+												</div>
+											</div>
+
 											
 										</div>
 									</div>
@@ -481,9 +672,195 @@
 
 
 		</div>
+
+
+
 	</div>
 
 	<script src="js/app.js"></script>
+
+	
+	<script>
+		$(document).ready(function(e) {
+			$('.toggleBootstrap').bootstrapToggle({
+				on: 'Yes',
+      			off: 'No'
+			});
+
+
+			//-------------------- add/remove contact number
+				$addContactBtn = $("#addContact");
+				$removeContactBtn = $("#removeContact");
+				$addContactWrap = $("#newContactField");
+				
+
+				// $deleteContact = $("#newContactField").find(".delete");
+				$addContactBtn.click(function() {
+					$currentId = parseInt($(".contactNumbers .contact-field-wrap").last().attr("data-id")) + 1;
+
+					$addContactFieldHtml = `
+						<div class="contact-field-wrap field-list align-items-center my-2" data-id="`+$currentId+`">
+							<span class="numbering me-2">`+$currentId+`.</span>
+
+							<div class="input-group">
+								<input type="text" class="form-control form-control-sm" name="contact-number`+$currentId+`" id="contact-number`+$currentId+`">
+								<!--<a href="#" class="btn btn-danger btn-sm delete"><i class="fas fa-times"></i></a>-->
+							</div>
+
+							<label class="form-inline-check me-2">
+								<input class="form-check-input" type="radio" value="yes" id="contact-primary`+$currentId+`" name="contact-primary">
+								<span class="form-check-label small">Primary</span>
+							</label>
+						</div>
+					`;
+					
+					$addContactWrap.append($addContactFieldHtml);
+				});
+
+				$removeContactBtn.click(function() {
+					if ($('.contactNumbers .contact-field-wrap').length > 1) {
+						$(".contactNumbers .contact-field-wrap").last().remove();
+					}
+				});
+			//-------------------- /add/remove contact number
+
+
+
+			//-------------------- add/remove email address
+				$addEmailBtn = $("#addEmail");
+				$removeEmailBtn = $("#removeEmail");
+				$addEmailWrap = $("#newEmailField");
+				
+				$addEmailBtn.click(function() {
+					$currentId = parseInt($(".emailAddress .email-field-wrap").last().attr("data-id")) + 1;
+
+					$addEmailFieldHtml = `
+						<div class="email-field-wrap field-list align-items-center my-2" data-id="`+$currentId+`">
+							<span class="numbering me-2">`+$currentId+`.</span>
+
+							<div class="input-group">
+								<input type="text" class="form-control form-control-sm" name="email-address`+$currentId+`" id="email-address`+$currentId+`">
+								<!--<a href="#" class="btn btn-danger btn-sm delete"><i class="fas fa-times"></i></a>-->
+							</div>
+
+							<label class="form-inline-check me-2">
+								<input class="form-check-input" type="radio" value="yes" id="email-primary`+$currentId+`" name="email-primary">
+								<span class="form-check-label small">Primary</span>
+							</label>
+						</div>
+					`;
+					
+					$addEmailWrap.append($addEmailFieldHtml);
+				});
+
+				$removeEmailBtn.click(function() {
+					if ($('.email-field-wrap').length > 1) {
+						$(".emailAddress .email-field-wrap").last().remove();
+					}
+				});
+			//-------------------- /add/remove email address
+
+
+
+
+			//-------------------- add/remove medicine details
+				$addMedicineBtn = $("#addMedicine");
+				$removeMedicineBtn = $("#removeMedicine");
+				$addMedicineWrap = $("#newMedicineField");
+				
+				$addMedicineBtn.click(function() {
+					$currentId = parseInt($(".medicines .medicine-field-wrap").last().attr("data-id")) + 1;
+
+					$addEmailFieldHtml = `
+						<div class="medicine-field-wrap my-2" data-id="`+$currentId+`">
+							<div class="field-list align-items-center">
+								<span class="numbering me-2">`+$currentId+`.</span>
+								<div class="field1"><input type="text" class="form-control form-control-sm" name="medicine-name`+$currentId+`" id="medicine-name`+$currentId+`" placeholder="Medicine Name"></div>
+								<div class="field2"><input type="text" class="form-control form-control-sm" name="medicine-desc`+$currentId+`" id="medicine-desc`+$currentId+`" placeholder="Medicine Description (e.g. why it was prescribed, doses etc)"></div>
+							</div>
+						</div>
+					`;
+					
+					$addMedicineWrap.append($addEmailFieldHtml);
+				});
+
+				$removeMedicineBtn.click(function() {
+					if ($('.medicine-field-wrap').length > 1) {
+						$(".medicines .medicine-field-wrap").last().remove();
+					}
+				});
+			//-------------------- /add/remove medicine details
+
+
+
+
+
+			//-------------------- add/remove consulted doctors
+				$addDoctorBtn = $("#addDoctor");
+				$removeDoctorBtn = $("#removeDoctor");
+				$addDoctorWrap = $("#newDoctorField");
+				
+				$addDoctorBtn.click(function() {
+					$currentId = parseInt($(".consultedDoctors .doctor-field-wrap").last().attr("data-id")) + 1;
+
+					$addEmailFieldHtml = `
+						<div class="doctor-field-wrap my-2" data-id="`+$currentId+`">
+							<div class="field-list align-items-center">
+								<span class="numbering me-2">`+$currentId+`.</span>
+								<div class="field1"><input type="text" class="form-control form-control-sm" name="doctor-name`+$currentId+`" id="doctor-name`+$currentId+`" placeholder="Doctor's Name"></div>
+								<div class="field2"><input type="text" class="form-control form-control-sm" name="doctor-special`+$currentId+`" id="doctor-special`+$currentId+`" placeholder="Specialization"></div>
+							</div>
+						</div>
+					`;
+					
+					$addDoctorWrap.append($addEmailFieldHtml);
+				});
+
+				$removeDoctorBtn.click(function() {
+					if ($('.doctor-field-wrap').length > 1) {
+						$(".consultedDoctors .doctor-field-wrap").last().remove();
+					}
+				});
+			//-------------------- /add/remove consulted doctors
+
+
+
+
+
+
+			// toggle
+			$("#have-allergy").change(function() {
+				if ($("#have-allergy").is(":checked")) {
+					$("#allergy-details").removeClass("d-none");
+				}
+				else {
+					$("#allergy-details").addClass("d-none");
+				}
+			});
+
+
+			$("#taking-medicine").change(function() {
+				if ($("#taking-medicine").is(":checked")) {
+					$("#medicine-details").removeClass("d-none");
+				}
+				else {
+					$("#medicine-details").addClass("d-none");
+				}
+			});
+
+
+			$("#consulted-anyone").change(function() {
+				if ($("#consulted-anyone").is(":checked")) {
+					$("#doctor-details").removeClass("d-none");
+				}
+				else {
+					$("#doctor-details").addClass("d-none");
+				}
+			});
+			
+			
+		});
+	</script>
 
 </body>
 
